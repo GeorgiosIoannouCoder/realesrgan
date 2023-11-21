@@ -185,33 +185,36 @@ with Pure Synthetic Data"**
 ## Usage
 
 1. To get any of the model weights please contact me at any time. Please see the readme file of the directory [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) and [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) in this project for the required file structure and models.
+
+***NOTE: For training, [NERSC](https://www.nersc.gov/) was used with four A100 GPUs due to the huge size of the datasets and network architectures. It took five days to train both the  Real-ESRNet and Real-ESRGAN.***
+
 2. To train your own model please follow the following instructions:
    1. Download the datasets DF2K and OST Training from [here](https://cvnote.ddlee.cc/2019/09/22/image-super-resolution-datasets
 ). Please see the readme file of the directory datasets in this project for the required file structure.
-   2. For the DF2K dataset, use a multi-scale strategy to downsample HR images to obtain several Ground-Truth images with different scales. Use the script [multiscale_df2k.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_scaling/multiscale_df2k.py) to do this.
+   1. For the DF2K dataset, use a multi-scale strategy to downsample HR images to obtain several Ground-Truth images with different scales. Use the script [multiscale_df2k.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_scaling/multiscale_df2k.py) to do this.
         ```sh
         python image_scaling/multiscale_df2k.py --input datasets/DF2K/DF2K_HR --output datasets/DF2K/DF2K_HR_multiscale
         ```
-   3. Next, crop the DF2K images obtained from step 2 into sub-images. Use the script [image_crop.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_cropping/image_crop.py) to do this.
+   2. Next, crop the DF2K images obtained from step 2 into sub-images. Use the script [image_crop.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_cropping/image_crop.py) to do this.
         ```sh
         python image_cropping/image_crop.py --input datasets/DF2K/DF2K_HR_multiscale --output datasets/DF2K/DF2K_HR_multiscale_subimages
         ```
-   5. Prepare a txt file containing the image paths. Use the script [image_path.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_path_generator/image_path.py) to do this.
+   3. Prepare a txt file containing the image paths. Use the script [image_path.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_path_generator/image_path.py) to do this.
         ```sh
         python image_path_generator/image_path.py -input datasets/DF2K/DF2K_HR_multiscale_subimages datasets/OST/ANIMAL datasets/OST/BUILDING -root "" "" "" -path ./image_path_generator/gt_image_paths.txt
         ```
-   6. Train Real-ESRNet using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py).
+   4. Train Real-ESRNet using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py).
         ```sh
         python training/training.py -opt training_parameters/real_esrnet_x4.yml
         ```
-   7. Train Real-ESRGAN using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py) and the model obtained from step 5.
+   5. Train Real-ESRGAN using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py) and the model obtained from step 5.
         ```sh
         python training/training.py -opt training_parameters/real_esrgan_x4.yml --auto_resume
         ```
-3. The training hasppens in two stages:
+1. The training hasppens in two stages:
    1. First, train Real-ESRNet with L1 loss from the pre-trained model ESRGAN.
    2. Next, use the trained Real-ESRNet model as an initialization of the generator, and train the Real-ESRGAN with a combination of L1 loss, perceptual loss and GAN loss.
-4. To inference any of the models use the script [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py):
+2. To inference any of the models use the script [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py):
     ```sh
     python inference/inference.py -input "ccny.jpg" -model_name "REALSRGAN_x4" -output "inferences" -upscale 4 -model_path "./models/REALESRGAN_x4.pth" -extension "auto"
      ```
