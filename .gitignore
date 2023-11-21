@@ -3,3 +3,16 @@
 
 # Pyenv
 .python-version
+
+# Datasets
+datasets/DF2K/DF2K_HR/
+datasets/OST/ANIMAL/
+datasetsOST/BUILDING/
+
+# Models
+model_needed_for_esrnet_training/ESRGAN_SRx4_DF2KOST_official-ff704c30.pth
+models/REALESRGAN_x4.pth
+models/REALESRNET_x4.pth
+
+# __pycache__
+inference/__pycache__/
