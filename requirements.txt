@@ -1,0 +1,10 @@
+basicsr
+numpy
+opencv-python
+Pillow
+requests
+streamlit
+torch
+torchvision
+torchaudio
+tqdm
