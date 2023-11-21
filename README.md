@@ -14,6 +14,7 @@
 <div align="center">
     <img src="logo.png" alt="Logo">
 
+Note: Images on the left are the original ones. Images on the right are coming from this project's model inference.
 
 <h3 align="center">Implementation of Real-ESRGAN</h3>
 
@@ -230,7 +231,7 @@ with Pure Synthetic Data"**
 
    https://www.loom.com/share/0a1fbd788dad4bc181db2c35d3385483?sid=a42066b5-d667-4262-b2a0-3aa03834018e
 
-3. **Streamlit Web Applicatin Inference**
+3. **Streamlit Web Application Inference**
    
    https://www.loom.com/share/bee6b7ac7b87440895d8d3dc8da99e92?sid=079e215b-2daa-471b-8543-dfe186d982d6
 
