@@ -62,10 +62,8 @@ Note: Images on the left are the original ones. Images on the right are coming f
 
 <img src="logo.png" alt="Logo" width="450" height="450">
 
-- **This propject is the implementation of the Real-ESRGAN and the Real-ESRNet from the paper "Real-ESRGAN: Training Real-World Blind Super-Resolution
+- **This project is the implementation of the Real-ESRGAN and the Real-ESRNet models from the paper "Real-ESRGAN: Training Real-World Blind Super-Resolution
 with Pure Synthetic Data"**
-- **Depth-First Search (DFS) and Breadth-First Search (BFS) are two techniques of traversing graphs and trees. DFS explores a graph or tree by diving as deeply as possible along a branch before backtracking, making it well-suited for tasks like finding paths and topological sorting. It is implemented using the stack data structure and recursion. Arrays/Lists can be used to implement the stack data structure.**
-- **BFS systematically explores all neighbors of a node before moving to their neighbors, making it ideal for finding the shortest path in unweighted graphs and efficiently visiting nodes level by level. BFS employs a queue to maintain a first-in-first-out order, allowing them to serve different graph exploration needs.**
 
 ### Problem Statement
 
