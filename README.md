@@ -184,7 +184,7 @@ with Pure Synthetic Data"**
 
 ## Usage
 
-1. To get any of the model weights please contact me at any time. Please see the readme file of the directory [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) and [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) in this project for the required file structure and models.
+1. To get any of the model weights please contact me at any time. Please see the readme files of the directories [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) and [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) in this project for the required file structure and models.
 
 ***NOTE: For training, [NERSC](https://www.nersc.gov/) was used with four A100 GPUs due to the huge size of the datasets and network architectures. It took five days to train both the  Real-ESRNet and Real-ESRGAN.***
 
