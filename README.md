@@ -211,7 +211,7 @@ with Pure Synthetic Data"**
 3. The training hasppens in two stages:
    1. First, train Real-ESRNet with L1 loss from the pre-trained model ESRGAN.
    2. Next, use the trained Real-ESRNet model as an initialization of the generator, and train the Real-ESRGAN with a combination of L1 loss, perceptual loss and GAN loss.
-4. To infernce any of the models:
+4. To inference any of the models use the script [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py):
     ```sh
     python inference/inference.py -input "ccny.jpg" -model_name "REALSRGAN_x4" -output "inferences" -upscale 4 -model_path "./models/REALESRGAN_x4.pth" -extension "auto"
      ```
