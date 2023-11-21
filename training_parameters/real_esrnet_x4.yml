@@ -1,0 +1,211 @@
+#########################################################################################
+# Filename: real_esrnet_x4plus.yml
+#########################################################################################
+#
+# Specify a unique name for the training run.
+name: REALESRNETx4
+# Use RealESRNetModel for super-resolution.
+model_type: RealESRNetModel
+# With a scale factor of 4.
+scale: 4
+# Automatically detect and use all available GPUs.
+num_gpu: auto
+# Set a manual seed for reproducibility.
+manual_seed: 42
+#########################################################################################
+# Data Synthesis Options.
+#
+# Apply Unsharp Masking (USM) to the ground-truth images.
+gt_usm: True
+#########################################################################################
+# First Degradation Process.
+#
+# Probability distribution for resizing with three possible ratios.
+resize_prob: [0.2, 0.7, 0.1]
+# Range for resizing factors.
+resize_range: [0.15, 1.5]
+# Probability of applying Gaussian noise.
+gaussian_noise_prob: 0.5
+# Range for the strength of Gaussian noise.
+noise_range: [1, 30]
+# Range for the scale parameter of Poisson noise.
+poisson_scale_range: [0.05, 3]
+# Probability of applying grayscale noise.
+gray_noise_prob: 0.4
+# Range for JPEG compression quality.
+jpeg_range: [30, 95]
+#########################################################################################
+# Second Degradation Process.
+#
+# Probability of applying a second blur.
+second_blur_prob: 0.8
+# Probability distribution for resizing in the second process.
+resize_prob2: [0.3, 0.4, 0.3]
+# Range for resizing factors in the second process.
+resize_range2: [0.3, 1.2]
+# Probability of applying Gaussian noise in the second process.
+gaussian_noise_prob2: 0.5
+# Range for the strength of Gaussian noise in the second process.
+noise_range2: [1, 25]
+# Range for the scale parameter of Poisson noise in the second process.
+poisson_scale_range2: [0.05, 2.5]
+# Probability of applying grayscale noise in the second process.
+gray_noise_prob2: 0.4
+# Range for JPEG compression quality in the second process.
+jpeg_range2: [30, 95]
+#########################################################################################
+# Image size for the ground truth images.
+gt_size: 256
+# Size of the queue for storing processed images.
+queue_size: 180
+#########################################################################################
+# Dataset and Data Loader Settings.
+#
+# Training is performed on the DF2K+OST dataset,
+# using the RealESRGANDataset.
+# Various options are provided for
+# kernel types, probabilities, and parameters for blurring.
+# These options simulate different blur conditions for data augmentation.
+# The data loader settings include options for
+# shuffling, the number of workers, batch size, and prefetching mode.
+datasets:
+  train:
+    name: DIV2K+FLICKR2K+OST
+    type: RealEsrGanDataset
+    dataroot_gt: datasets/
+    meta_info: image_path_generator/gt_image_paths.txt
+    io_backend:
+      type: disk
+
+    blur_kernel_size: 21
+    kernel_list:
+      [
+        "iso",
+        "aniso",
+        "generalized_iso",
+        "generalized_aniso",
+        "plateau_iso",
+        "plateau_aniso",
+      ]
+    kernel_prob: [0.45, 0.25, 0.12, 0.03, 0.12, 0.03]
+    sinc_prob: 0.1
+    blur_sigma: [0.2, 3]
+    betag_range: [0.5, 4]
+    betap_range: [1, 2]
+
+    blur_kernel_size2: 21
+    kernel_list2:
+      [
+        "iso",
+        "aniso",
+        "generalized_iso",
+        "generalized_aniso",
+        "plateau_iso",
+        "plateau_aniso",
+      ]
+    kernel_prob2: [0.45, 0.25, 0.12, 0.03, 0.12, 0.03]
+    sinc_prob2: 0.1
+    blur_sigma2: [0.2, 1.5]
+    betag_range2: [0.5, 4]
+    betap_range2: [1, 2]
+
+    final_sinc_prob: 0.8
+
+    gt_size: 256
+    use_hflip: True
+    use_rot: False
+
+    # Data Loader.
+    use_shuffle: True
+    num_worker_per_gpu: 5
+    batch_size_per_gpu: 12
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+#########################################################################################
+# Network structures. (Generator)
+#
+# Generator.
+#
+# The generator network (network_g) is specified as RRDBNet
+# with specific parameters such as the number of
+# input and output channels
+# feature size,
+# block count,
+# and growth channel.
+network_g:
+  type: RRDBNet
+  num_in_ch: 3
+  num_out_ch: 3
+  num_feat: 64
+  num_block: 23
+  num_grow_ch: 32
+#########################################################################################
+# Path.
+#
+# The path to the pre-trained ESRGAN generator network model.
+# ESRGAN is used to train REAL-ESRNET.
+path:
+  pretrain_network_g: model_needed_for_esrnet_training/ESRGAN_SRx4_DF2KOST_official-ff704c30.pth
+  param_key_g: params_ema
+  strict_load_g: True
+  resume_state: ~
+#########################################################################################
+# Training Settings.
+#
+train:
+  # Exponential Moving Average decay for model parameters.
+  ema_decay: 0.999
+
+  # Generator optimization settings.
+  optim_g:
+    # Optimizer type for the generator.
+    type: Adam
+    # Learning rate for the generator.
+    lr: !!float 2e-4
+    # Weight decay for the generator.
+    weight_decay: 0
+    # Beta values for the Adam optimizer.
+    betas: [0.9, 0.99]
+
+  # Learning rate scheduler settings.
+  scheduler:
+    # Learning rate scheduler type.
+    type: MultiStepLR
+    # Milestones for the learning rate scheduler.
+    milestones: [1000000]
+    # Gamma parameter for the learning rate scheduler.
+    gamma: 0.5
+
+  # Total number of training iterations.
+  total_iter: 1000000
+
+  # No warm-up iterations.
+  warmup_iter: -1
+
+  # Pixel-wise optimization loss.
+  pixel_opt:
+    # Type of pixel-wise optimization loss.
+    type: L1Loss
+    # Weight for the pixel-wise optimization loss.
+    loss_weight: 1.0
+    # Reduction method for the loss.
+    reduction: mean
+#########################################################################################
+# Logging Settings.
+#
+# Logging is set to print every 100 iterations.
+# Logging is set to save checkpoints every 5000 iterations.
+# Checkpoint saving frequency and WandB (Weights & Biases) settings are also specified.
+logger:
+  print_freq: 1
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: False
+  wandb:
+    project: ~
+    resume_id: ~
+#########################################################################################
+# Distributed Training Settings.
+dist_params:
+  backend: nccl
+  port: 29500
+#########################################################################################
