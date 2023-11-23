@@ -14,7 +14,10 @@
 <div align="center">
     <img src="logo.png" alt="Logo">
 
-Note: Images on the left are the original ones. Images on the right are coming from this project's model inference.
+
+##### For the building image above please cick [here to see the original image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/ccny.jpg) and please cick [here to see the resulting/inference image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/inferences/ccny_inference_upscale_4.jpg). 
+
+#### Note: Images on the left are the original ones. Images on the right are coming from this project's model inference.
 
 <h3 align="center">Implementation of Real-ESRGAN</h3>
 
@@ -221,7 +224,7 @@ with Pure Synthetic Data"**
 
 ## Demo
 
-1. **Training Porcess**
+1. **Training Process**
 
    https://www.loom.com/share/1378b1c1c6b64705902fa86d9ffac6d0?sid=0ce792a8-00f4-4068-a2a2-e407bcc5e98a
 
@@ -235,7 +238,7 @@ with Pure Synthetic Data"**
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
-## Reports
+## Report
 
 1. You can find the report for this project [here](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/Ioannou_Georgios_Report.pdf) where it explains this project in detail.
 
