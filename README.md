@@ -326,4 +326,4 @@ Project Link: [https://github.com/GeorgiosIoannouCoder/realesrgan](https://githu
 [BasicSR]: https://img.shields.io/badge/basicsr-000000?style=for-the-badge&logo=basicsr
 [BasicSR-url]: https://basicsr.readthedocs.io/en/latest/
 [NERSC]: https://img.shields.io/badge/nersc-000000?style=for-the-badge&logo=nersc
-[NERSC-url]: https://www.nersc.gov/
+[NERSC-url]: https://www.nersc.gov/systems/perlmutter/
