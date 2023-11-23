@@ -181,14 +181,14 @@ with Pure Synthetic Data"**
    streamlit run app.py
    ```
 
-***NOTE: You can also use the inference/inference.py script to test the model in the command line. More instructions can be found below.***
+***NOTE: You can also use the [inference/inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py) script to test the model in the command line. More instructions can be found below in the [Usage](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#usage) section.***
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Usage
 
-1. To get any of the model weights please contact me at any time. Please see the readme files of the directories [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) and [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) in this project for the required file structure and models.
-
 ***NOTE: For training, [NERSC](https://www.nersc.gov/) was used with four A100 GPUs due to the huge size of the datasets and network architectures. It took five days to train both the  Real-ESRNet and Real-ESRGAN.***
+
+1. To get any of the model weights from this project please [contact me at any time](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#contact). They have not been uploaded to GitHub due to the large file size. Please see the README.md files of the directories [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) and [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) for the required file structure and names of the model needed for the first training and the models resulting from both the frist and second training for this project respectively.
 
 2. To train your own model please follow the following instructions:
    1. Download the datasets DF2K and OST Training from [here](https://cvnote.ddlee.cc/2019/09/22/image-super-resolution-datasets
