@@ -15,7 +15,7 @@
     <img src="logo.png" alt="Logo">
 
 
-##### For the building image above please cick [here to see the original image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/ccny.jpg) and please cick [here to see the resulting/inference image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/inferences/ccny_inference_upscale_4.jpg). 
+#### For the building image above please cick [here to see the original image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/ccny.jpg) and please cick [here to see the resulting/inference image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/inferences/ccny_inference_upscale_4.jpg). 
 
 #### Note: Images on the left are the original ones. Images on the right are coming from this project's model inference.
 
