@@ -86,12 +86,12 @@ with Pure Synthetic Data"**
 ### Built With
 
 [![Python][Python]][Python-url]
-[![BasicSR][BasicSR]][BasicSR-url]
 [![Numpy][Numpy]][Numpy-url]
 [![OpenCV][OpenCV]][OpenCV-url]
-[![Pillow][Pillow]][Pillow-url]
-[![Streamlit][Streamlit]][Streamlit-url]
 [![Pytorch][Pytorch]][Pytorch-url]
+[![Streamlit][Streamlit]][Streamlit-url]
+[![Pillow][Pillow]][Pillow-url]
+[![BasicSR][BasicSR]][BasicSR-url]
 [![NERSC][NERSC]][NERSC-url]
 
 
@@ -313,17 +313,17 @@ Project Link: [https://github.com/GeorgiosIoannouCoder/realesrgan](https://githu
 [github-url]: https://github.com/GeorgiosIoannouCoder/
 [Python]: https://img.shields.io/badge/python-FFDE57?style=for-the-badge&logo=python&logoColor=4584B6
 [Python-url]: https://www.python.org/
-[BasicSR]: https://img.shields.io/badge/basicsr-000000?style=for-the-badge&logo=basicsr
-[BasicSR-url]: https://basicsr.readthedocs.io/en/latest/
 [Numpy]: https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white
 [Numpy-url]: https://numpy.org/
 [OpenCV]: https://img.shields.io/badge/opencv-000000?style=for-the-badge&logo=opencv&logoColor=00ff00
 [OpenCV-url]: https://opencv.org/
-[Pillow]: https://img.shields.io/badge/pillow-000000?style=for-the-badge&logo=pillow
-[Pillow-url]: https://pillow.readthedocs.io/en/stable/
-[Streamlit]: https://img.shields.io/badge/streamlit-ffffff?style=for-the-badge&logo=streamlit&logoColor=ff0000
-[Streamlit-url]: https://streamlit.io/
 [Pytorch]: https://img.shields.io/badge/pytorch-%23EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white
 [Pytorch-url]: https://pytorch.org/
+[Streamlit]: https://img.shields.io/badge/streamlit-ffffff?style=for-the-badge&logo=streamlit&logoColor=ff0000
+[Streamlit-url]: https://streamlit.io/
+[Pillow]: https://img.shields.io/badge/pillow-000000?style=for-the-badge&logo=pillow
+[Pillow-url]: https://pillow.readthedocs.io/en/stable/
+[BasicSR]: https://img.shields.io/badge/basicsr-000000?style=for-the-badge&logo=basicsr
+[BasicSR-url]: https://basicsr.readthedocs.io/en/latest/
 [NERSC]: https://img.shields.io/badge/nersc-000000?style=for-the-badge&logo=nersc
 [NERSC-url]: https://www.nersc.gov/
