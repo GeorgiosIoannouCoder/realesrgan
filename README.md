@@ -174,14 +174,20 @@ with Pure Synthetic Data"**
    ```sh
    source .realesrgan/bin/activate
    ```
-    
-7. Run Streamlit
+
+7. Install the dependencies listed in the requirements.txt file:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+8. Run Streamlit
 
    ```sh
    streamlit run app.py
    ```
 
 ***NOTE: You can also use the [inference/inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py) script to test the model in the command line. More instructions can be found below in the [Usage](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#usage) section.***
+
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Usage
@@ -191,6 +197,9 @@ with Pure Synthetic Data"**
 1. To get any of the model weights from this project please [contact me at any time](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#contact). They have not been uploaded to GitHub due to the large file size. Please see the README.md files of the directories [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) and [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) for the required file structure and names of the model needed for the first training and the models resulting from both the first and second training for this project respectively.
 
 2. To train your own model please follow the following instructions:
+   
+   ***NOTE: Please make sure that you have installed the dependencies listed in the [requirements.txt](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/requirements.txt) file as shown in the [Setup](https://github.com/GeorgiosIoannouCoder/realesrgan#setup) section before proceeding.***
+
    1. Download the datasets DF2K and OST Training from [here](https://cvnote.ddlee.cc/2019/09/22/image-super-resolution-datasets
 ). Please see the readme file of the directory [datasets](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/datasets) in this project for the required file structure.
    1. For the DF2K dataset, use a multi-scale strategy to downsample HR images to obtain several Ground-Truth images with different scales. Use the script [multiscale_df2k.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_scaling/multiscale_df2k.py) to do this.
