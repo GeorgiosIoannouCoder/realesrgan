@@ -188,11 +188,11 @@ with Pure Synthetic Data"**
 
 ***NOTE: For training, [NERSC](https://www.nersc.gov/) was used with four A100 GPUs due to the huge size of the datasets and network architectures. It took five days to train both the  Real-ESRNet and Real-ESRGAN.***
 
-1. To get any of the model weights from this project please [contact me at any time](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#contact). They have not been uploaded to GitHub due to the large file size. Please see the README.md files of the directories [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) and [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) for the required file structure and names of the model needed for the first training and the models resulting from both the frist and second training for this project respectively.
+1. To get any of the model weights from this project please [contact me at any time](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#contact). They have not been uploaded to GitHub due to the large file size. Please see the README.md files of the directories [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) and [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) for the required file structure and names of the model needed for the first training and the models resulting from both the first and second training for this project respectively.
 
 2. To train your own model please follow the following instructions:
    1. Download the datasets DF2K and OST Training from [here](https://cvnote.ddlee.cc/2019/09/22/image-super-resolution-datasets
-). Please see the readme file of the directory datasets in this project for the required file structure.
+). Please see the readme file of the directory [datasets](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/datasets) in this project for the required file structure.
    1. For the DF2K dataset, use a multi-scale strategy to downsample HR images to obtain several Ground-Truth images with different scales. Use the script [multiscale_df2k.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_scaling/multiscale_df2k.py) to do this.
         ```sh
         python image_scaling/multiscale_df2k.py --input datasets/DF2K/DF2K_HR --output datasets/DF2K/DF2K_HR_multiscale
