@@ -132,37 +132,37 @@ with Pure Synthetic Data"**
 
 ### Setup
 
-1. Navigate to the directory where you want to clone/run/save the application
+1. Navigate to the directory where you want to clone/run/save the application:
 
    ```sh
    cd your_selected_directory
    ```
 
-2. Clone this repository
+2. Clone this repository:
 
    ```sh
    git clone https://github.com/GeorgiosIoannouCoder/realesrgan.git
    ```
 
-3. Navigate to the realesrgan git repository
+3. Navigate to the realesrgan git repository:
 
    ```sh
    cd realesrgan
    ```
 
-4. Use Python3 3.10.9 version in the cloned repository folder
+4. Use Python3 3.10.9 version in the cloned repository folder:
 
    ```sh
    pyenv local 3.10.9
    ```
 
-5. Create virtual environment in the cloned repository folder
+5. Create virtual environment in the cloned repository folder:
 
    ```sh
    python -m venv .realesrgan-venv
    ```
 
-6. Activate the virtual environment (Windows OR Mac/Linux)
+6. Activate the virtual environment (Windows OR Mac/Linux):
    1. Windows
 
    ```sh
@@ -180,7 +180,7 @@ with Pure Synthetic Data"**
    pip install -r requirements.txt
    ```
 
-8. Run Streamlit
+8. Run Streamlit:
 
    ```sh
    streamlit run app.py
