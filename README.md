@@ -237,11 +237,11 @@ with Pure Synthetic Data"**
 
    https://www.loom.com/share/1378b1c1c6b64705902fa86d9ffac6d0?sid=0ce792a8-00f4-4068-a2a2-e407bcc5e98a
 
-2. **Inference Process: Command Line**
+2. **Inference Process: Command Line | [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py)**
 
    https://www.loom.com/share/0a1fbd788dad4bc181db2c35d3385483?sid=a42066b5-d667-4262-b2a0-3aa03834018e
 
-3. **Inference Process: Streamlit Web Application**
+3. **Inference Process: Streamlit Web Application | [app.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/app.py)**
    
    https://www.loom.com/share/bee6b7ac7b87440895d8d3dc8da99e92?sid=079e215b-2daa-471b-8543-dfe186d982d6
 
