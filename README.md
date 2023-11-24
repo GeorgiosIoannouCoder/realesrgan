@@ -213,10 +213,10 @@ with Pure Synthetic Data"**
         ```sh
         python training/training.py -opt training_parameters/real_esrgan_x4.yml --auto_resume
         ```
-1. The training hasppens in two stages:
+1. The training process happens in two stages:
    1. First, train Real-ESRNet with L1 loss from the pre-trained model `ESRGAN_SRx4_DF2KOST_official-ff704c30.pth`.
-   2. Next, use the trained Real-ESRNet model from the previous step as an initialization of the generator, to train the Real-ESRGAN with a combination of L1 loss, perceptual loss and GAN loss.
-2. To inference any of the models use the script [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py):
+   2. Next, use the trained Real-ESRNet model from the previous step as an initialization of the generator, to train the Real-ESRGAN with a combination of L1 loss, perceptual loss, and GAN loss.
+2. To inference any of the models, use the script [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py):
     ```sh
     python inference/inference.py -input "ccny.jpg" -model_name "REALSRGAN_x4" -output "inferences" -upscale 4 -model_path "./models/REALESRGAN_x4.pth" -extension "auto"
      ```
