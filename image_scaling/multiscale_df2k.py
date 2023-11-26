@@ -1,6 +1,6 @@
 #########################################################################################
 # Filename: multiscale_df2k.py
-# Description: Scale up and dwon images.
+# Description: Scale up and down images.
 #########################################################################################
 #
 # Import libraries.
