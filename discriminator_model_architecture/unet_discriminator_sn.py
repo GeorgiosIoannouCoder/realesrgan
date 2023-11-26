@@ -1,6 +1,6 @@
 ##############################################################################################################
 # Filename: unet_discriminator_sn.py
-# Description: The archiarchitecture of the UnetDiscriminatorSn used for training the REAL-ESRGAN.
+# Description: The architecture of the UnetDiscriminatorSn used for training the REAL-ESRGAN.
 # As descirbed in the paper "Real-ESRGAN: Training Real-World Blind Super-Resolution with Pure Synthetic Data"
 ##############################################################################################################
 #
