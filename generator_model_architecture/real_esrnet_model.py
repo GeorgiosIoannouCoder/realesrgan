@@ -1,6 +1,6 @@
 ####################################################################################################
 # Filename: real_esrnet_model.py
-# Description: The archiarchitecture of the generator REAL-ESRNET used for training the REAL-ESRGAN.
+# Description: The architecture of the generator REAL-ESRNET used for training the REAL-ESRGAN.
 ####################################################################################################
 #
 # Import libraries.
