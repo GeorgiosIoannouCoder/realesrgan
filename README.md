@@ -237,19 +237,19 @@
 1. **Training Process**
 
    <a href="https://www.loom.com/share/1378b1c1c6b64705902fa86d9ffac6d0?sid=0ce792a8-00f4-4068-a2a2-e407bcc5e98a">
-         <img src="Ioannou_Georgios_NERSC_training_realesrgan.png" alt="Training">
+      <img src="Ioannou_Georgios_NERSC_training_realesrgan.png" target="_blank" alt="Training">
    </a>
 
 2. **Inference Process: Command Line | [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py)**
 
    <a href="https://www.loom.com/share/0a1fbd788dad4bc181db2c35d3385483?sid=a42066b5-d667-4262-b2a0-3aa03834018e">
-      <img src="Ioannou_Georgios_NERSC_inference_realsrgan.png" alt="Inference">
+      <img src="Ioannou_Georgios_NERSC_inference_realsrgan.png" target="_blank" alt="Inference">
    </a>
 
 3. **Inference Process: Streamlit Web Application | [app.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/app.py)**
 
    <a href="https://www.loom.com/share/bee6b7ac7b87440895d8d3dc8da99e92?sid=079e215b-2daa-471b-8543-dfe186d982d6">
-      <img src="Ioannou_Georgios_Streamlit_realesrgan.png" alt="Streamlit">
+      <img src="Ioannou_Georgios_Streamlit_realesrgan.png" target="_blank" alt="Streamlit">
    </a>
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
