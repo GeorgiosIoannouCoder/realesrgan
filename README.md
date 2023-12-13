@@ -14,8 +14,7 @@
 <div align="center">
     <img src="logo.png" alt="Logo">
 
-
-#### For the building image above please click [here to see the original image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/ccny.jpg) and please click [here to see the resulting/inference image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/inferences/ccny_inference_upscale_4.jpg). 
+#### For the building image above please click [here to see the original image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/ccny.jpg) and please click [here to see the resulting/inference image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/inferences/ccny_inference_upscale_4.jpg).
 
 #### Note: Images on the left are the original ones. Images on the right are coming from this project's model inference.
 
@@ -66,7 +65,7 @@
 <img src="logo.png" alt="Logo" width="450" height="450">
 
 - **This project is the implementation of the Real-ESRGAN and the Real-ESRNet models from the paper "Real-ESRGAN: Training Real-World Blind Super-Resolution
-with Pure Synthetic Data"**
+  with Pure Synthetic Data"**
 
 ### Problem Statement
 
@@ -93,7 +92,6 @@ with Pure Synthetic Data"**
 [![Pillow][Pillow]][Pillow-url]
 [![BasicSR][BasicSR]][BasicSR-url]
 [![NERSC][NERSC]][NERSC-url]
-
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
@@ -127,7 +125,7 @@ with Pure Synthetic Data"**
    - Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
    - Mac: [https://git-scm.com/download/mac](https://git-scm.com/download/mac)
    - Linux: [https://git-scm.com/download/linux](https://git-scm.com/download/linux)
-  
+
 3. Please look at the [setup](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/setup) folder found in this project.
 
 ### Setup
@@ -163,6 +161,7 @@ with Pure Synthetic Data"**
    ```
 
 6. Activate the virtual environment (Windows OR Mac/Linux):
+
    1. Windows
 
    ```sh
@@ -176,6 +175,7 @@ with Pure Synthetic Data"**
    ```
 
 7. Install the dependencies listed in the requirements.txt file:
+
    ```sh
    pip install -r requirements.txt
    ```
@@ -186,64 +186,71 @@ with Pure Synthetic Data"**
    streamlit run app.py
    ```
 
-***NOTE: You can also use the [inference/inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py) script to test the model in the command line. More instructions can be found below in the [Usage](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#usage) section.***
+**_NOTE: You can also use the [inference/inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py) script to test the model in the command line. More instructions can be found below in the [Usage](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#usage) section._**
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Usage
 
-***NOTE: For training, [NERSC](https://www.nersc.gov/) was used with four A100 GPUs due to the huge size of the datasets and network architectures. It took five days to train both the  Real-ESRNet and Real-ESRGAN.***
+**_NOTE: For training, [NERSC](https://www.nersc.gov/) was used with four A100 GPUs due to the huge size of the datasets and network architectures. It took five days to train both the Real-ESRNet and Real-ESRGAN._**
 
 1. To get any of the model weights from this project please [contact me at any time](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main#contact). They have not been uploaded to GitHub due to the large file size. Please see the README.md files of the directories [model_needed_for_esrnet_training](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training) and [models](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/models) for the required file structure and names of the model needed for the first training and the models resulting from both the first and second training for this project respectively.
 
 2. To train your own model please follow the following instructions:
-   
-   ***NOTE: Please make sure that you have installed the dependencies listed in the [requirements.txt](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/requirements.txt) file as shown in the [Setup](https://github.com/GeorgiosIoannouCoder/realesrgan#setup) section before proceeding.***
 
-   1. Download the datasets DF2K and OST Training from [here](https://cvnote.ddlee.cc/2019/09/22/image-super-resolution-datasets
-). Please see the readme file of the directory [datasets](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/datasets) in this project for the required file structure.
+   **_NOTE: Please make sure that you have installed the dependencies listed in the [requirements.txt](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/requirements.txt) file as shown in the [Setup](https://github.com/GeorgiosIoannouCoder/realesrgan#setup) section before proceeding._**
+
+   1. Download the datasets DF2K and OST Training from [here](https://cvnote.ddlee.cc/2019/09/22/image-super-resolution-datasets). Please see the readme file of the directory [datasets](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/datasets) in this project for the required file structure.
    1. For the DF2K dataset, use a multi-scale strategy to downsample HR images to obtain several Ground-Truth images with different scales. Use the script [multiscale_df2k.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_scaling/multiscale_df2k.py) to do this.
-        ```sh
-        python image_scaling/multiscale_df2k.py --input datasets/DF2K/DF2K_HR --output datasets/DF2K/DF2K_HR_multiscale
-        ```
-   2. Next, crop the DF2K images obtained from step 2 into sub-images. Use the script [image_crop.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_cropping/image_crop.py) to do this.
-        ```sh
-        python image_cropping/image_crop.py --input datasets/DF2K/DF2K_HR_multiscale --output datasets/DF2K/DF2K_HR_multiscale_subimages
-        ```
-   3. Prepare a txt file containing the image paths. Use the script [image_path.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_path_generator/image_path.py) to do this.
-        ```sh
-        python image_path_generator/image_path.py -input datasets/DF2K/DF2K_HR_multiscale_subimages datasets/OST/ANIMAL datasets/OST/BUILDING -root "" "" "" -path ./image_path_generator/gt_image_paths.txt
-        ```
-   4. Train Real-ESRNet using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py).
-        ```sh
-        python training/training.py -opt training_parameters/real_esrnet_x4.yml
-        ```
-   5. Train Real-ESRGAN using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py) and the model obtained from step 5.
-        ```sh
-        python training/training.py -opt training_parameters/real_esrgan_x4.yml --auto_resume
-        ```
-1. The training process happens in two stages:
+      ```sh
+      python image_scaling/multiscale_df2k.py --input datasets/DF2K/DF2K_HR --output datasets/DF2K/DF2K_HR_multiscale
+      ```
+   1. Next, crop the DF2K images obtained from step 2 into sub-images. Use the script [image_crop.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_cropping/image_crop.py) to do this.
+      ```sh
+      python image_cropping/image_crop.py --input datasets/DF2K/DF2K_HR_multiscale --output datasets/DF2K/DF2K_HR_multiscale_subimages
+      ```
+   1. Prepare a txt file containing the image paths. Use the script [image_path.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/image_path_generator/image_path.py) to do this.
+      ```sh
+      python image_path_generator/image_path.py -input datasets/DF2K/DF2K_HR_multiscale_subimages datasets/OST/ANIMAL datasets/OST/BUILDING -root "" "" "" -path ./image_path_generator/gt_image_paths.txt
+      ```
+   1. Train Real-ESRNet using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py).
+      ```sh
+      python training/training.py -opt training_parameters/real_esrnet_x4.yml
+      ```
+   1. Train Real-ESRGAN using the script [training.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/training/training.py) and the model obtained from step 5.
+      ```sh
+      python training/training.py -opt training_parameters/real_esrgan_x4.yml --auto_resume
+      ```
+
+3. The training process happens in two stages:
    1. First, train Real-ESRNet with L1 loss from the pre-trained model [`ESRGAN_SRx4_DF2KOST_official-ff704c30.pth`](https://github.com/GeorgiosIoannouCoder/realesrgan/tree/main/model_needed_for_esrnet_training).
    2. Next, use the trained Real-ESRNet model from the previous step as an initialization of the generator, to train the Real-ESRGAN with a combination of L1 loss, perceptual loss, and GAN loss.
-2. To inference any of the models, use the script [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py):
-    ```sh
-    python inference/inference.py -input "ccny.jpg" -model_name "REALSRGAN_x4" -output "inferences" -upscale 4 -model_path "./models/REALESRGAN_x4.pth" -extension "auto"
-     ```
+4. To inference any of the models, use the script [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py):
+   ```sh
+   python inference/inference.py -input "ccny.jpg" -model_name "REALSRGAN_x4" -output "inferences" -upscale 4 -model_path "./models/REALESRGAN_x4.pth" -extension "auto"
+   ```
+
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Demo
 
 1. **Training Process**
 
-   https://www.loom.com/share/1378b1c1c6b64705902fa86d9ffac6d0?sid=0ce792a8-00f4-4068-a2a2-e407bcc5e98a
+   <a href="https://www.loom.com/share/1378b1c1c6b64705902fa86d9ffac6d0?sid=0ce792a8-00f4-4068-a2a2-e407bcc5e98a">
+         <img src="Ioannou_Georgios_NERSC_training_realesrgan.png" alt="Training">
+   </a>
 
 2. **Inference Process: Command Line | [inference.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/inference/inference.py)**
 
-   https://www.loom.com/share/0a1fbd788dad4bc181db2c35d3385483?sid=a42066b5-d667-4262-b2a0-3aa03834018e
+   <a href="https://www.loom.com/share/0a1fbd788dad4bc181db2c35d3385483?sid=a42066b5-d667-4262-b2a0-3aa03834018e">
+      <img src="Ioannou_Georgios_NERSC_inference_realsrgan.png" alt="Inference">
+   </a>
 
 3. **Inference Process: Streamlit Web Application | [app.py](https://github.com/GeorgiosIoannouCoder/realesrgan/blob/main/app.py)**
-   
-   https://www.loom.com/share/bee6b7ac7b87440895d8d3dc8da99e92?sid=079e215b-2daa-471b-8543-dfe186d982d6
+
+   <a href="https://www.loom.com/share/bee6b7ac7b87440895d8d3dc8da99e92?sid=079e215b-2daa-471b-8543-dfe186d982d6">
+      <img src="Ioannou_Georgios_Streamlit_realesrgan.png" alt="Streamlit">
+   </a>
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
