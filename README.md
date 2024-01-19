@@ -8,7 +8,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![GitHub][github-shield]][github-url]
 
-# [Real-ESRGAN] | Implementation of Real-ESRGAN
+# [Real-ESRGAN](https://arxiv.org/abs/2107.10833) | Implementation of Real-ESRGAN
 
 <br />
 <div align="center">
