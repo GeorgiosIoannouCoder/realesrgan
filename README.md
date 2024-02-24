@@ -8,7 +8,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![GitHub][github-shield]][github-url]
 
-# [Real-ESRGAN](https://huggingface.co/spaces/GeorgiosIoannouCoder/realesrgan) | Implementation of Real-ESRGAN (https://arxiv.org/abs/2107.10833)
+# [Real-ESRGAN](https://huggingface.co/spaces/GeorgiosIoannouCoder/realesrgan) | [Implementation of Real-ESRGAN](https://arxiv.org/abs/2107.10833)
 
 <br />
 <div align="center">
@@ -55,7 +55,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#demo">Demo</a></li>
-    <li><a href="#application-user-interface">Application User Interface</a></li>
+    <li><a href="#application-user-interface">Application Graphical User Interface</a></li>
     <li><a href="#reports">Reports</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -262,7 +262,7 @@
 ### Application Graphical User Interface
 
  <a href="https://huggingface.co/spaces/GeorgiosIoannouCoder/realesrgan">
-    <img src="GUI.jpg" alt="GUI">
+    <img src="GUI.png" alt="GUI">
  </a>
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
