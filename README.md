@@ -55,7 +55,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#demo">Demo</a></li>
-    <li><a href="#application-user-interface">Application Graphical User Interface</a></li>
+    <li><a href="#application-graphical-user-interface">Application Graphical User Interface</a></li>
     <li><a href="#reports">Reports</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
