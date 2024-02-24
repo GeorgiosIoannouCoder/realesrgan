@@ -8,11 +8,13 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![GitHub][github-shield]][github-url]
 
-# [Real-ESRGAN](https://arxiv.org/abs/2107.10833) | Implementation of Real-ESRGAN
+# [Real-ESRGAN](https://huggingface.co/spaces/GeorgiosIoannouCoder/realesrgan) | Implementation of Real-ESRGAN (https://arxiv.org/abs/2107.10833)
 
 <br />
 <div align="center">
-    <img src="logo.png" alt="Logo">
+   <a href="https://huggingface.co/spaces/GeorgiosIoannouCoder/realesrgan">
+      <img src="logo.png" alt="Logo">
+   </a>
 
 #### For the building image above please click [here to see the original image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/ccny.jpg) and please click [here to see the resulting/inference image](https://raw.githubusercontent.com/GeorgiosIoannouCoder/realesrgan/main/inferences/ccny_inference_upscale_4.jpg).
 
@@ -53,6 +55,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#demo">Demo</a></li>
+    <li><a href="#application-user-interface">Application User Interface</a></li>
     <li><a href="#reports">Reports</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -62,7 +65,9 @@
 
 ## About The Project
 
-<img src="logo.png" alt="Logo" width="450" height="450">
+<a href="https://huggingface.co/spaces/GeorgiosIoannouCoder/realesrgan">
+   <img src="logo.png" alt="Logo" width="450" height="450">
+</a>
 
 - **This project is the implementation of the Real-ESRGAN and the Real-ESRNet models from the paper "Real-ESRGAN: Training Real-World Blind Super-Resolution
   with Pure Synthetic Data"**
@@ -251,6 +256,14 @@
    <a href="https://www.loom.com/share/bee6b7ac7b87440895d8d3dc8da99e92?sid=079e215b-2daa-471b-8543-dfe186d982d6">
       <img src="Ioannou_Georgios_Streamlit_realesrgan.png" target="_blank" alt="Streamlit">
    </a>
+
+<p align="right"><a href="#readme-top">Back to top</a></p>
+
+### Application Graphical User Interface
+
+ <a href="https://huggingface.co/spaces/GeorgiosIoannouCoder/realesrgan">
+    <img src="GUI.jpg" alt="GUI">
+ </a>
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
